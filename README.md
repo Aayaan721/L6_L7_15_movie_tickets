@@ -40,7 +40,7 @@ Lab 7 applies property-based fuzz testing to three functions: `parse_seat`, `tot
 |---|---|
 | Fixed application | [fixed_movie_tickets.py](lab_7/fixed_movie_tickets.py) |
 | Hypothesis tests | [test_movie_tickets.py](lab_7/test_movie_tickets.py) |
-| PDF evidence report | `PES2UG24CS017_SE_Lab7_Report.pdf` — prepared separately; pending binary upload to `lab_7/` |
+| PDF evidence report | [PES2UG24CS017_SE_Lab7_Report.pdf](lab_7/PES2UG24CS017_SE_Lab7_Report.pdf) |
 
 The lab evidence records **3 failing tests before fixes** and **3 passing tests after fixes**.
 
