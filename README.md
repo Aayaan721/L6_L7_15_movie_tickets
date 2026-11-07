@@ -1,30 +1,60 @@
-# Software Engineering Lab 6 — Code and Branch Coverage
+# Software Engineering Labs 6 & 7 — Movie Tickets
 
 **Aayaan Kamil · PES2UG24CS017**
 
-This repository root contains all Lab 6 submission deliverables. The original `Lab 6/` nesting has been removed to make the files immediately visible.
+This fork contains two separate Software Engineering lab submissions. Each lab's files are isolated in its own folder.
 
-| Deliverable | File | Verified result |
+## Lab 6 — Code and Branch Coverage
+
+All original Lab 6 deliverables were moved from the repository root into [`lab_6/`](lab_6/) without changes to the underlying files.
+
+| Deliverable | File | Recorded result |
 |---|---|---|
-| Application | [movie_tickets.py](movie_tickets.py) | Original, unchanged |
-| Starter tests | [test_movie_tickets.py](test_movie_tickets.py) | Original, unchanged |
-| Code-coverage tests | [CodeCoverageTest_movie_tickets_application.py](CodeCoverageTest_movie_tickets_application.py) | 14 passed |
-| Branch-coverage tests | [BranchCoverageTest_movie_tickets_application.py](BranchCoverageTest_movie_tickets_application.py) | 26 passed |
-| Code-coverage screenshot | [code_coverage.png](code_coverage.png) | 100% line coverage |
-| Branch-coverage screenshot | [branch_coverage.png](branch_coverage.png) | 100% of 28 branches |
-| Code coverage analysis and report | [Code_Coverage_Analysis_Report.md](Code_Coverage_Analysis_Report.md) | Interpretation, test strategy, results |
-| Branch coverage analysis and report | [Branch_Coverage_Analysis_Report.md](Branch_Coverage_Analysis_Report.md) | Branch paths, interpretation, results |
+| Application | [movie_tickets.py](lab_6/movie_tickets.py) | Original, unchanged |
+| Starter tests | [test_movie_tickets.py](lab_6/test_movie_tickets.py) | Original, unchanged |
+| Code-coverage tests | [CodeCoverageTest_movie_tickets_application.py](lab_6/CodeCoverageTest_movie_tickets_application.py) | 14 passed |
+| Branch-coverage tests | [BranchCoverageTest_movie_tickets_application.py](lab_6/BranchCoverageTest_movie_tickets_application.py) | 26 passed |
+| Code coverage screenshot | [code_coverage.png](lab_6/code_coverage.png) | 100% line coverage |
+| Branch coverage screenshot | [branch_coverage.png](lab_6/branch_coverage.png) | 100% of 28 branches |
+| Code coverage analysis | [Code_Coverage_Analysis_Report.md](lab_6/Code_Coverage_Analysis_Report.md) | Analysis and results |
+| Branch coverage analysis | [Branch_Coverage_Analysis_Report.md](lab_6/Branch_Coverage_Analysis_Report.md) | Analysis and results |
 
-## Run from this repository root (Windows PowerShell)
+### Run Lab 6
 
 ```powershell
-py -m pip install coverage pytest
-py -m coverage run --source=movie_tickets -m pytest CodeCoverageTest_movie_tickets_application.py
-py -m coverage report -m
-py -m coverage run --branch --source=movie_tickets -m pytest BranchCoverageTest_movie_tickets_application.py
-py -m coverage report -m
+cd lab_6
+python -m pip install pytest coverage
+python -m coverage run --source=movie_tickets -m pytest CodeCoverageTest_movie_tickets_application.py
+python -m coverage report -m
+python -m coverage run --branch --source=movie_tickets -m pytest BranchCoverageTest_movie_tickets_application.py
+python -m coverage report -m
 ```
 
-Take the code-coverage screenshot before running the branch coverage command, because the second run replaces the earlier coverage measurement.
+Capture the code-coverage screenshot before running the branch-coverage command because the latter overwrites the coverage data.
 
-The original two required coverage commits are preserved in history; this later commit reorganizes the files and adds the optional written analysis reports.
+## Lab 7 — Fuzz Testing with Hypothesis
+
+Lab 7 applies property-based fuzz testing to three functions: `parse_seat`, `total_price`, and `average_rating`.
+
+| Deliverable | File |
+|---|---|
+| Fixed application | [fixed_movie_tickets.py](lab_7/fixed_movie_tickets.py) |
+| Hypothesis tests | [test_movie_tickets.py](lab_7/test_movie_tickets.py) |
+| PDF evidence report | `PES2UG24CS017_SE_Lab7_Report.pdf` — prepared separately; pending binary upload to `lab_7/` |
+
+The lab evidence records **3 failing tests before fixes** and **3 passing tests after fixes**.
+
+### Run Lab 7
+
+```powershell
+cd lab_7
+python -m pip install hypothesis pytest
+python -m pytest test_movie_tickets.py -v
+python fixed_movie_tickets.py
+```
+
+## Original source
+
+[SETAPESU26/L6_L7_15_movie_tickets](https://github.com/SETAPESU26/L6_L7_15_movie_tickets)
+
+The lab folders are separated for submission convenience. The repository history retains earlier Lab 6 changes.
